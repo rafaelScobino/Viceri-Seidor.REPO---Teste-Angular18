@@ -16,7 +16,14 @@
     "install:mfe-agenda": "cd mfe-agenda && npm install",
     "install:mfe-planos": "cd mfe-planos && npm install",
     "install:mfe-shared": "cd mfe-shared && npm install",
-    "install-all":  "npm-run-all --parallel install:host-shell install:mfe-home install:mfe-pessoas install:mfe-agenda install:mfe-planos install:mfe-shared"
+    "install-all": "npm-run-all --serial install:host-shell echo:host-shell install:mfe-home echo:mfe-home install:mfe-pessoas echo:mfe-pessoas install:mfe-agenda echo:mfe-agenda install:mfe-planos echo:mfe-planos install:mfe-shared echo:mfe-shared echo:done",
+    "echo:host-shell": "echo ✅ host-shell instalado!",
+    "echo:mfe-home": "echo ✅ mfe-home instalado!",
+    "echo:mfe-pessoas": "echo ✅ mfe-pessoas instalado!",
+    "echo:mfe-agenda": "echo ✅ mfe-agenda instalado!",
+    "echo:mfe-planos": "echo ✅ mfe-planos instalado!",
+    "echo:mfe-shared": "echo ✅ mfe-shared instalado!",
+    "echo:done": "echo 🎯 Todas instalações terminaram!"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"
