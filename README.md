@@ -123,6 +123,7 @@ No serviço de gerenciamento de estado do mfe-agenda (agenda-shared.service) foi
 ---
 
 ## 🚀 Instalação e Execução
+0. Faça um git clone do projeto atual
 
 1. Na raiz do projeto, instale dependências centrais:   npm install
 2. Para instalar dependências de todos os MFEs simultaneamente: npm run install-all
