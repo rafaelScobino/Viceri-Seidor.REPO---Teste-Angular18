@@ -100,16 +100,16 @@ No serviço de gerenciamento de estado do mfe-agenda (agenda-shared.service) foi
 
 ## 🏗️ Estrutura de Pastas
 
-📦 projeto-mfe-unificado/
-│
-├── package.json # Scripts e comandos centrais
-│
-├── host-shell/ # Aplicação principal (container)
-├── mfe-home/ # MFE de página inicial
-├── mfe-pessoas/ # MFE de cadastro/listagem de pessoas
-├── mfe-agenda/ # MFE de agenda e eventos
-├── mfe-planos/ # MFE de cadastro/listagem de planos de ação
-└── mfe-shared/ # MFE de componentes compartilhados
+| Estrutura                 | Descrição                                  |
+| ------------------------- | ------------------------------------------ |
+| 📦 projeto-mfe-unificado/ | Pasta raiz                                 |
+| `package.json`            | Scripts e comandos centrais                |
+| `host-shell/`             | Aplicação principal (container)            |
+| `mfe-home/`               | MFE de página inicial                      |
+| `mfe-pessoas/`            | MFE de cadastro/listagem de pessoas        |
+| `mfe-agenda/`             | MFE de agenda e eventos                    |
+| `mfe-planos/`             | MFE de cadastro/listagem de planos de ação |
+| `mfe-shared/`             | MFE de componentes compartilhados          |
 
 
 ---
@@ -125,22 +125,27 @@ No serviço de gerenciamento de estado do mfe-agenda (agenda-shared.service) foi
 ## 🚀 Instalação e Execução
 0. Faça um git clone do projeto atual
 
-1. Na raiz do projeto, instale dependências centrais:   npm install
-2. Para instalar dependências de todos os MFEs simultaneamente: npm run install-all
-  Esse comando executa, em série:
-    npm install em host-shell
-    npm install em mfe-home
-    npm install em mfe-pessoas
-    npm install em mfe-agenda
-    npm install em mfe-planos
-    npm install em mfe-shared
+1. Na raiz do projeto, instale dependências centrais:   **npm install**
+2. Para instalar dependências de todos os MFEs simultaneamente:
+
+   **npm run install-all**
+
+Esse comando executa, em série:
+
+   ├── npm install em host-shell
+   ├── npm install em mfe-home
+   ├── npm install em mfe-pessoas
+   ├── npm install em mfe-agenda
+   ├── npm install em mfe-planos
+   └── npm install em mfe-shared
+
 
 3.Para instalar dependências individualmente: Ex: cd mfe-home -> npm install
 
 
 🚧 Execução (Modo Desenvolvimento)
 
-1. Para rodar todos os MFEs simultaneamente: npm run serve-all
+1. Para rodar todos os MFEs simultaneamente: **npm run serve-all**
 
 | Aplicação      | Porta | URL                                            |
 | -------------- | ----- | ---------------------------------------------- |
@@ -199,7 +204,7 @@ Objetivo: Garantir estabilidade, evitar regressões e aumentar cobertura do cód
 
 Cobertura de testes unitários (Unit Tests)
 
-Criar testes unitários para todos os serviços principais (agenda-shared.service, serviços de autenticação, serviços de API).
+Criar testes unitários para todos os serviços principais (agenda-shared.service, serviços de autenticação).
 
 
 Testes de integração (Integration Tests)
@@ -245,10 +250,6 @@ Impedir navegação caso haja formulário incompleto ou alterações não salvas
 Objetivo: Garantir integridade de dados e UX melhorada.
 
 Usar Reactive Forms com validações personalizadas.
-
-Criar validators reutilizáveis no mfe-shared:
-
-Validação de e-mail, CPF/CNPJ, telefone.
 
 Validação de datas (ex.: datas futuras, horários válidos).
 
