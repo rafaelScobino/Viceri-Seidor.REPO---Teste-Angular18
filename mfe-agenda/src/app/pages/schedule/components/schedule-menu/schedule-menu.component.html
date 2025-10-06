@@ -1,0 +1,24 @@
+<div>
+  <p-datepicker
+  class="max-w-full"
+  [inline]="true"
+[(ngModel)]="rangeDates"
+selectionMode="multiple"
+[disabled]="true"
+  />
+  <!-- Lista Hoje -->
+  <div class="agenda-dia p-4 border rounded">
+    <h3 class="font-bold mb-2">Hoje</h3>
+    <ul class="list-disc pl-5">
+      <li *ngFor="let item of todayEvents">{{ item }}</li>
+    </ul>
+  </div>
+
+  <!-- Lista Amanhã -->
+  <div class="agenda-dia p-4 border rounded">
+    <h3 class="font-bold mb-2">Amanhã</h3>
+    <ul class="list-disc pl-5">
+      <li *ngFor="let item of tomorrowEvents">{{ item }}</li>
+    </ul>
+  </div>
+</div>

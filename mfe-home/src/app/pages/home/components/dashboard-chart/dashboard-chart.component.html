@@ -1,0 +1,34 @@
+
+  <p-card [style]="{ width: '100%',height:'100%' , overflow: 'hidden' }" styleClass="shadow-lg rounded-2xl">
+    <ng-template pTemplate="title">
+      <h2 class="text-xl font-semibold text-gray-700">{{title}}</h2>
+    </ng-template>
+
+    <ng-template pTemplate="subtitle">
+      <span class="text-sm text-gray-500">{{subtitle}}</span>
+    </ng-template>
+
+    <ng-template pTemplate="body">
+      <div class="my-10">
+        <p-chart
+        [type]="chartType"
+        [data]="data"
+        [options]="options"
+        class="w-full"
+        height="300px">
+      </p-chart>
+      </div>
+
+    </ng-template>
+
+    <p class="text-gray-600 text-sm leading-relaxed">
+      {{chartInfo}}
+    </p>
+
+    <ng-template pTemplate="footer">
+<div class="flex justify-around gap-4 mt-auto">
+  <p>Numero de {{tipoData}}: <b>{{totalData}}</b></p>
+</div>
+
+    </ng-template>
+  </p-card>

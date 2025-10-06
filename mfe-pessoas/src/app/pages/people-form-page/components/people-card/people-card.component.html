@@ -1,0 +1,41 @@
+<div style="max-width: 450px">
+  <p-card class="shadow-lg rounded-xl w-full max-w-xs overflow-hidden">
+    <ng-template pTemplate="header">
+      <div class="flex justify-center mt-4">
+        <img
+          alt="Foto da Pessoa"
+          class="w-24 h-24 rounded-full object-cover shadow-md"
+          src="https://robohash.org/mail@ashallendesign.co.uk"
+        />
+      </div>
+    </ng-template>
+
+    <ng-template pTemplate="title">
+      <div class="text-center font-bold text-lg">Informações da Pessoa</div>
+    </ng-template>
+
+    <div class="mt-3 space-y-2 text-sm">
+      <div>
+        <span class="font-semibold">Nome:</span> {{ person.nome || "..." }}
+      </div>
+      <div>
+        <span class="font-semibold">CPF:</span> {{ person.cpf || "..." }}
+      </div>
+      <div>
+        <span class="font-semibold">Celular:</span>
+        {{ person.celular || "..." }}
+      </div>
+      <div>
+        <span class="font-semibold">Email:</span> {{ person.email || "..." }}
+      </div>
+      <div>
+        <span class="font-semibold">Escola:</span
+        >{{ person?.escola?.nome || "..." }}
+      </div>
+      <div>
+        <span class="font-semibold">Endereço:</span>
+        {{person.getEnderecoFormatado()}}
+      </div>
+    </div>
+  </p-card>
+</div>

@@ -1,0 +1,18 @@
+<ng-container *ngIf="tableTreeFile && tableTreeFile.length > 0; else noProblema" >
+<app-tree-table-list
+[showButton]="true"
+[tableFiles]="tableTreeFile"
+[cols]="tableCols"
+[showGrid]="false"
+(openModalAction)="_openModalAction($event)"
+></app-tree-table-list>
+</ng-container>
+
+<ng-template #noProblema>
+<p>Nenhum problema cadastrado!</p>
+</ng-template>
+
+<app-modal-action
+#modalAction
+(emitAction)="addAction($event)"
+></app-modal-action>

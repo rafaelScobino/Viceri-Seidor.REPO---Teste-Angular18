@@ -1,0 +1,14 @@
+<p-dialog
+  header="Cadastro de Ação"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '50rem', height: '45rem', maxheight: '50rem' }"
+  [contentStyle]="{ 'max-height': 'none', height: '100%' }"
+>
+  <app-form-acoes #formAction></app-form-acoes>
+
+  <div class="flex justify-end gap-2">
+    <p-button label="Fechar" severity="secondary" (click)="visible = false" />
+    <p-button label="Salvar" raised="true" severity="success" (click)="submitForm()" />
+  </div>
+</p-dialog>

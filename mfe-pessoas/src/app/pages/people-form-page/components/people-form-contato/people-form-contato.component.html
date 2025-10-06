@@ -1,0 +1,59 @@
+<form [formGroup]="formContato" class="space-y-6 p-4 max-w-full">
+
+
+  <div class="flex flex-col gap-4">
+    <div class="w-full md:w-1/2">
+      <p-floatlabel variant="on" class="w-full">
+        <input
+          pInputText
+          id="email"
+          formControlName="email"
+          autocomplete="off"
+          class="w-full h-14 px-4 text-lg"
+          [ngClass]="{'ng-invalid ng-dirty':(formContato.get('email')?.invalid)}"
+        />
+        <label for="email" class="text-gray-500">E-mail</label>
+      </p-floatlabel>
+    </div>
+  </div>
+
+
+  <div class="flex flex-col gap-4">
+    <div class="w-full md:w-1/4">
+         <p-floatlabel variant="on">
+        <p-inputmask
+        id="celular"
+        mask="(99) 9 9999-9999"
+        formControlName="celular"
+        styleClass="w-full h-14 px-4 text-lg"
+
+        />
+        <label for="celular">celular</label>
+      </p-floatlabel>
+    </div>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    <div class="w-full md:w-1/4">
+      <p-floatlabel variant="on" class="w-full">
+        <p-inputmask
+        id="telefone"
+        mask="(99) 9999-9999"
+        formControlName="telefone"
+        styleClass="w-full h-14 px-4 text-lg"
+        />
+        <label for="telefone">Telefone</label>
+         </p-floatlabel>
+    </div>
+    <p-button
+      pRipple
+      label="Salvar"
+      icon="pi pi-check"
+      (onClick)="submitForm()"
+      raised="true"
+      size="large"
+      severity="success"
+    ></p-button>
+  </div>
+
+</form>

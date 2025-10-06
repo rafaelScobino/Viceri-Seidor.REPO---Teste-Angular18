@@ -1,0 +1,22 @@
+<div class="my-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+<app-dashboard-chart
+[title]="'Usuários'"
+[subtitle]="'Por escola'"
+[chartType]="'pie'"
+[tipoData]="'Usuários'"
+[chartInfo]="'Esse é um gráfico que mostra a relação entre quantidade de Usuários e as escolas que pertencem'"
+[data]="configUsuariosEscola"
+[totalData]="userTotal"
+[options]="options"
+></app-dashboard-chart>
+<app-dashboard-chart
+[title]="'Planos'"
+[subtitle]="'Por andamento'"
+[chartType]="'pie'"
+[chartInfo]="'Esse é um gráfico que mostra a relação entre quantidade de planos e os status de andamento como concluído ou em andamento'"
+[tipoData]="'Planos'"
+[data]="configPlanoStatus"
+[totalData]="planTotal"
+[options]="options"
+></app-dashboard-chart>
+</div>

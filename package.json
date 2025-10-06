@@ -1,0 +1,26 @@
+{
+  "name": "mfes-unificado",
+  "version": "1.0.0",
+  "description": "Projeto unificado contendo todos os MFEs em Angular 18",
+  "scripts": {
+    "serve:host-shell": "cd host-shell && npx ng serve --port 4200",
+    "serve:mfe-home": "cd mfe-home && npx ng serve --port 4201",
+    "serve:mfe-pessoas": "cd mfe-pessoas && npx ng serve --port 4202",
+    "serve:mfe-agenda": "cd mfe-agenda && npx ng serve --port 4203",
+    "serve:mfe-planos": "cd mfe-planos && npx ng serve --port 4204",
+    "serve:mfe-shared": "cd mfe-shared && npx ng serve --port 4300",
+    "serve-all": "npm-run-all --parallel serve:host-shell serve:mfe-home serve:mfe-pessoas serve:mfe-agenda serve:mfe-planos serve:mfe-shared",
+    "install:host-shell": "cd host-shell && npm install",
+    "install:mfe-home": "cd mfe-home && npm install",
+    "install:mfe-pessoas": "cd mfe-pessoas && npm install",
+    "install:mfe-agenda": "cd mfe-agenda && npm install",
+    "install:mfe-planos": "cd mfe-planos && npm install",
+    "install:mfe-shared": "cd mfe-shared && npm install",
+    "install-all":  "npm-run-all --parallel install:host-shell install:mfe-home install:mfe-pessoas install:mfe-agenda install:mfe-planos install:mfe-shared"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "author": "Rafael Scobino da Costa Baltar",
+  "license": "MIT"
+}

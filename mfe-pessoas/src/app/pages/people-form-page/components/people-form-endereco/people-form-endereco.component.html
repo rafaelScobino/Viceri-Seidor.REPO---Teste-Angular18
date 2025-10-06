@@ -1,0 +1,72 @@
+<form [formGroup]="formEndereco" class="space-y-6 p-4 max-w-full">
+
+  <div class="flex flex-col md:flex-row gap-4">
+
+    <div class="flex-2 w-full md:w-2/3">
+      <p-floatlabel variant="on" class="w-full">
+        <input
+          pInputText
+          id="endereco"
+          formControlName="endereco"
+          autocomplete="off"
+          class="w-full h-14 px-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <label for="endereco" class="text-gray-500">Endereço</label>
+      </p-floatlabel>
+    </div>
+
+    <div class="flex-1 w-full md:w-1/3">
+      <p-floatlabel variant="on" class="w-full">
+        <input
+          pInputText
+          id="cidade"
+          formControlName="cidade"
+          autocomplete="off"
+          class="w-full h-14 px-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <label for="cidade" class="text-gray-500">Cidade</label>
+      </p-floatlabel>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-4">
+
+    <div class="w-full md:w-1/4">
+      <p-floatlabel variant="on" class="w-full">
+        <input
+          pInputText
+          id="cep"
+          formControlName="cep"
+          autocomplete="off"
+          class="w-full h-12 px-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <label for="cep" class="text-gray-500 text-sm">CEP</label>
+      </p-floatlabel>
+    </div>
+
+
+    <div class="w-full md:w-1/4">
+      <p-floatlabel variant="on" class="w-full">
+        <input
+          pInputText
+          id="estado"
+          formControlName="estado"
+          autocomplete="off"
+          class="w-full h-12 px-3 text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+        <label for="estado" class="text-gray-500 text-sm">Estado</label>
+      </p-floatlabel>
+    </div>
+
+    <div class="w-full md:w-1/4">
+      <p-select
+        formControlName="pais"
+        [options]="[{code:'BR', nome:'Brasil'}, {code:'US', nome:'Estados Unidos'}]"
+        optionLabel="nome"
+        placeholder="País"
+        class="w-full h-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      ></p-select>
+    </div>
+  </div>
+
+</form>

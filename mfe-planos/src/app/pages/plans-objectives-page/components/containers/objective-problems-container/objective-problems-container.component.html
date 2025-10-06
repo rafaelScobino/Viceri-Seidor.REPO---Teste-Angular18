@@ -1,0 +1,19 @@
+<ng-container *ngIf="showForms(); else noObjetivos">
+<app-form-problemas
+        [objetivos]="objetivoSelect"
+      (formValues)="submitForm($event)"
+></app-form-problemas>
+  <ng-container  *ngFor="let objetivo of objetivos">
+    <div class="mb-5">
+      <h2 class="text-xl font-semibold text-gray-700">{{ objetivo.descricao }}</h2>
+      <hr class="w-1/4 border-t-2 border-gray-300 mb-5" />
+      <app-problem-list
+      [tableData]="objetivo.problemas"
+      ></app-problem-list>
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-template #noObjetivos>
+  <p>Nenhum objetivo encontrado.</p>
+</ng-template>

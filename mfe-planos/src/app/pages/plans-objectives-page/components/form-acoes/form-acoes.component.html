@@ -1,0 +1,107 @@
+<form [formGroup]="formAction">
+
+  <div  class="w-full h-full flex flex-col gap-6 p-6">
+  <div class="w-full">
+    <p-floatlabel variant="on">
+      <input
+        pInputText
+        id="descricao"
+        formControlName="descricao"
+        autocomplete="off"
+        class="w-full"
+      />
+      <label for="descricao">Descrição</label>
+    </p-floatlabel>
+  </div>
+
+
+  <div class="w-full">
+    <label for="responsaveis" class="block mb-2 font-medium"
+      >Responsáveis</label
+    >
+    <p-multiSelect
+      [options]="responsaveisOptions"
+      formControlName="responsaveis"
+      optionLabel="nome"
+      placeholder="Selecione os responsáveis"
+      display="chip"
+      class="w-full"
+    ></p-multiSelect>
+  </div>
+
+
+  <div class="grid grid-cols-2 gap-6 w-full">
+    <div>
+      <label for="dataInicioPrevista" class="block mb-2 font-medium"
+        >Data Início Prevista</label
+      >
+      <p-datepicker
+        formControlName="dataInicioPrevista"
+        inputId="dataInicioPrevista"
+        dateFormat="dd/mm/yy"
+        class="w-full"
+        [placeholder]="'00/00/000'"
+        appendTo="body"
+      ></p-datepicker>
+    </div>
+    <div>
+      <label for="dataFimPrevista" class="block mb-2 font-medium"
+        >Data Fim Prevista</label
+      >
+      <p-datepicker
+        formControlName="dataFimPrevista"
+        inputId="dataFimPrevista"
+        dateFormat="dd/mm/yy"
+        class="w-full"
+        [placeholder]="'00/00/000'"
+        appendTo="body"
+      ></p-datepicker>
+    </div>
+  </div>
+
+
+  <div class="grid grid-cols-2 gap-6 w-full">
+    <div>
+      <label for="dataInicioRealizada" class="block mb-2 font-medium"
+        >Data Início Realizada</label
+      >
+      <p-datepicker
+        formControlName="dataInicioRealizada"
+        inputId="dataInicioRealizada"
+        dateFormat="dd/mm/yy"
+        class="w-full"
+        [placeholder]="'00/00/000'"
+        appendTo="body"
+      ></p-datepicker>
+    </div>
+    <div>
+      <label for="dataFimRealizada" class="block mb-2 font-medium"
+        >Data Fim Realizada</label
+      >
+      <p-datepicker
+        formControlName="dataFimRealizada"
+        inputId="dataFimRealizada"
+        dateFormat="dd/mm/yy"
+        class="w-full"
+        [placeholder]="'00/00/000'"
+        appendTo="body"
+      ></p-datepicker>
+    </div>
+  </div>
+
+  <div class="w-full">
+    <p-floatlabel variant="on">
+      <input
+        pInputText
+        id="status"
+        formControlName="status"
+        autocomplete="off"
+        class="w-full bg-gray-40"
+        readonly
+      />
+      <label for="status">Status</label>
+    </p-floatlabel>
+  </div>
+  </div>
+
+</form>

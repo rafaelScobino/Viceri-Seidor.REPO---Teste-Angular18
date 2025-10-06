@@ -1,0 +1,13 @@
+<p-dialog header="Novo Evento" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem' }">
+
+     <app-event-form
+     #formEvent
+     ></app-event-form>
+
+    <div class="flex justify-end gap-2">
+        <p-button label="Cancel" severity="secondary" (click)="visible = false" />
+        <p-button label="Save" (onClick)="submitForm()"  />
+    </div>
+</p-dialog>
+
+

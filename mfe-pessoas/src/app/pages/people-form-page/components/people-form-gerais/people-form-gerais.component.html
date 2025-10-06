@@ -1,0 +1,65 @@
+<form [formGroup]="formGerais" class="space-y-6 p-4 max-w-full">
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="flex-1">
+      <p-floatlabel variant="on" class="w-full">
+        <input
+          pInputText
+          id="nome"
+          formControlName="nome"
+          autocomplete="off"
+          class="w-full h-14 px-4 text-lg"
+          [ngClass]="{ 'ng-invalid ng-dirty': formGerais.get('nome')?.invalid }"
+        />
+        <label for="nome" class="text-gray-500">Nome</label>
+      </p-floatlabel>
+    </div>
+
+    <div class="flex-1">
+      <p-floatlabel variant="on" class="w-full">
+        <input
+          pInputText
+          id="nomeSocial"
+          formControlName="nomeSocial"
+          autocomplete="off"
+          class="w-full h-14 px-4 text-lg"
+        />
+        <label for="nomeSocial" class="text-gray-500">Nome Social</label>
+      </p-floatlabel>
+    </div>
+  </div>
+
+  <div class="flex flex-row gap-4 items-center">
+    <div class="w-1/4">
+      <p-floatlabel variant="on">
+        <p-inputmask
+        id="cpf"
+        mask="999.999.999-99"
+        formControlName="cpf"
+        styleClass="w-full h-14 px-4 text-lg"
+        [ngClass]="{'ng-invalid ng-dirty':(formGerais.get('cpf')?.invalid)}"
+        />
+        <label for="cpf">CPF</label>
+      </p-floatlabel>
+    </div>
+
+    <div class="w-1/3">
+      <p-select
+        formControlName="escola"
+        [options]="escolaOptions"
+        optionLabel="nome"
+        placeholder="Escola"
+        class="w-full h-14 px-4 text-lg"
+        [ngClass]="{ 'ng-invalid ng-dirty': formGerais.get('escola')?.invalid }"
+      ></p-select>
+    </div>
+    <p-button
+      pRipple
+      label="Salvar"
+      icon="pi pi-check"
+      (onClick)="submitForm()"
+      raised="true"
+      size="large"
+      severity="success"
+    ></p-button>
+  </div>
+</form>
